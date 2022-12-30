@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin("http://127.0.0.1:5173/")
 @RequestMapping("/api/v1/cart")
 public class CartController {
     @Autowired

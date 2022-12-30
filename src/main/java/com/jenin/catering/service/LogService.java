@@ -18,4 +18,6 @@ public interface LogService {
     List<Log> getLogsByName(String event_name);
 
     void setExtraServicesInLog(List<ExtraServices> extraServices, Long event_id);
+
+    void setExtraServicesInLogwithId(List<Long> extraServices, Long event_id);
 }

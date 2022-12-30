@@ -71,4 +71,15 @@ public class LogServiceImpl implements LogService {
 
         //logRepository.setExtraServicesById(extraServices, event_id);
     }
+
+    @Override
+    @Transactional
+    public void setExtraServicesInLogwithId(List<Long> extraServices, Long event_id) {
+        Optional<Log> log = logRepository.findById(event_id);
+        if(log.isEmpty()) {
+            throw new RuntimeException("Exception");
+        }
+        for(Long i: extraServices)
+            logRepository.insertExtraServices(i, event_id);;
+    }
 }
